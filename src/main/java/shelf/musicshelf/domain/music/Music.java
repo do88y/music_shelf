@@ -21,4 +21,9 @@ public class Music {
     private Player player;
     private String title;
     private String era;
+
+    private static Music createMusic(String Composer, String player, String title, String era) {
+        Composer composer = new Composer();
+        return null;
+    }
 }
