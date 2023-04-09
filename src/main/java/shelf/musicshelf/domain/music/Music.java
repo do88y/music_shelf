@@ -1,4 +1,4 @@
-package shelf.musicshelf.domain;
+package shelf.musicshelf.domain.music;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -20,10 +20,15 @@ public class Music {
     @JoinColumn(name = "player_id")
     private Player player;
     private String title;
-    private String era;
+    @Enumerated(EnumType.STRING)
+    private Category category;
 
-    private static Music createMusic(String Composer, String player, String title, String era) {
-        Composer composer = new Composer();
-        return null;
+    public static Music createMusic(Composer composer, Player player, String title, Category category) {
+        Music music = new Music();
+        music.composer = composer;
+        music.player = player;
+        music.title = title;
+        music.category = category;
+        return music;
     }
 }
