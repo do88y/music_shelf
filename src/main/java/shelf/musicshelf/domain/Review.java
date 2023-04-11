@@ -2,6 +2,7 @@ package shelf.musicshelf.domain;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import shelf.musicshelf.domain.music.Music;
 
 import javax.persistence.*;
 

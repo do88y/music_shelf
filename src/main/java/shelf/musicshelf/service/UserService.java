@@ -29,6 +29,7 @@ public class UserService {
     /**
      * 회원가입
      */
+    @Transactional
     public String join(User user) {
         userRepository.save(user);
         return user.getUsername();
@@ -38,9 +39,9 @@ public class UserService {
      * 로그인
      */
     public String login(String username, String password) {
-        userRepository.findByUsername(username).orElseThrow(
+        User user = userRepository.findByUsername(username).orElseThrow(
                 () -> new NoSuchElementException("가입되지 않은 이름입니다."));
-        if (!password.equals(password)) {
+        if (!password.equals(user.getPassword())) {
             throw new IllegalArgumentException("잘못된 비밀번호입니다.");
         }
 

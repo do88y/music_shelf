@@ -1,4 +1,4 @@
-package shelf.musicshelf.domain;
+package shelf.musicshelf.domain.music;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
