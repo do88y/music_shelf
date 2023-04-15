@@ -10,6 +10,8 @@ import shelf.musicshelf.domain.music.Category;
 import shelf.musicshelf.domain.music.Music;
 import shelf.musicshelf.repository.MusicRepository;
 
+import java.util.List;
+
 @SpringBootTest
 @Transactional
 class MusicServiceTest {
@@ -25,9 +27,9 @@ class MusicServiceTest {
         musicRepository.save(savedMusic);
 
         //when
-        Music findMusic = musicRepository.findByComposerName("bach");
+        List<Music> findMusic = musicRepository.findByComposerName("bach");
 
         //then
-        Assertions.assertThat(findMusic).isEqualTo(savedMusic);
+        Assertions.assertThat(findMusic.get(0)).isEqualTo(savedMusic);
     }
 }
